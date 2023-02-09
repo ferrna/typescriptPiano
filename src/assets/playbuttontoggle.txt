@@ -1,0 +1,61 @@
+<div>
+  <span className={trackState ==="onplay"?"onplay":"button"}>
+  <span className={"s1 " + trackState} onClick={trackState === "onplay" ? handleStop: handlePianoState}>
+  {}</span></span>
+</div>
+
+
+const [trackState, setTrackState] = useState("stopped")
+
+function handlePianoState (){
+    const stateFilteredKeys = _.flow([
+      Object.entries,
+      arr => arr.filter(([key, value]: [string, boolean]) => value === true),
+      arr => arr.map((inner: [string, boolean]) => inner[0])
+    ])(state);
+    let arrayNotesToPlay: Note[] = []
+    for (let i = 0; i < stateFilteredKeys.length; i++) {
+      const found = notes.find(element => element.name === stateFilteredKeys[i]);
+      if(found) arrayNotesToPlay.push(found)
+    }
+    for (let i = 0; i < arrayNotesToPlay.length; i++) {
+      painoOn(arrayNotesToPlay[i], dispatch)
+    }
+    toggleTrackState()
+  }
+  function handleStop (){
+    dispatch({type: 'restore', payload: true})
+    stopAll()
+    toggleTrackState()
+  }
+  function toggleTrackState (){
+    if(trackState==="stopped") setTrackState("onplay")
+    if(trackState==="onplay") setTrackState("stopped")
+  }
+
+
+
+.button{
+  width: 50px;
+	height: 50px;
+	background: transparent;
+	margin: 0 auto;
+	cursor: pointer;
+}
+.button .s1{
+	display: block;
+	background: #FFFFFF;
+	width:20px;
+	height: 20px;
+	transition: all 0.3s ease;
+	-webkit-clip-path: polygon(100% 0, 100% 100%, 66% 100%, 66% 0, 35% 0, 35% 100%, 0 100%, 0 0);
+	clip-path: polygon(100% 0, 100% 100%, 66% 100%, 66% 0, 35% 0, 35% 100%, 0 100%, 0 0);
+}
+.onplay .s1{
+  display: block;
+  background: #FFFFFF;
+  width:20px;
+	height: 20px;
+	-webkit-clip-path: polygon(100% 49%, 100% 49%, 46% 77%, 46% 26%, 46% 25%, 46% 77%, 0 100%, 0 0);
+	clip-path: polygon(100% 49%, 100% 49%, 46% 77%, 46% 26%, 46% 25%, 46% 77%, 0 100%, 0 0);
+}

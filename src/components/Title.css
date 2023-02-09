@@ -1,0 +1,16 @@
+.Title {
+    font-family: 'Gabriola', sans-serif;
+    font-size: 1.5rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Title h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #ff0000 5%, #00B053 15%, #1BAADA 30%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 12px transparent;
+    min-width: 10ch;
+}
