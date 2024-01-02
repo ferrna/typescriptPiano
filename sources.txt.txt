@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=uasGsHf7UYA I Play JavaScript: Making a Web Audio Synthesizer (Neil McCallion)
+https://pages.mtu.edu/~suits/notefreqs.html Frequency of Musical Notes
+https://www.physicsclassroom.com/class/sound/Lesson-4/Fundamental-Frequency-and-Harmonics Fundamental Frequency and Harmonics
+https://www.newline.co/@bespoyasov/how-to-use-state-in-react-components-with-typescript--625c1f27 How to Use State in React Components with Typescript
+https://reactjs.org/docs/hooks-reference.html Hooks API Reference - React
